@@ -14,6 +14,8 @@
 		3F68DDBF1C4FE9490062C9DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F68DDBD1C4FE9490062C9DC /* LaunchScreen.storyboard */; };
 		3F68DDCA1C4FE9490062C9DC /* College_Profile_BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68DDC91C4FE9490062C9DC /* College_Profile_BuilderTests.swift */; };
 		3F68DDD51C4FE9490062C9DC /* College_Profile_BuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68DDD41C4FE9490062C9DC /* College_Profile_BuilderUITests.swift */; };
+		3F68DDE31C513C340062C9DC /* CollegesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68DDE21C513C340062C9DC /* CollegesClass.swift */; };
+		3F68DDE51C5142780062C9DC /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68DDE41C5142780062C9DC /* detailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		3F68DDD01C4FE9490062C9DC /* College Profile BuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "College Profile BuilderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F68DDD41C4FE9490062C9DC /* College_Profile_BuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = College_Profile_BuilderUITests.swift; sourceTree = "<group>"; };
 		3F68DDD61C4FE9490062C9DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F68DDE21C513C340062C9DC /* CollegesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollegesClass.swift; sourceTree = "<group>"; };
+		3F68DDE41C5142780062C9DC /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				3F68DDB41C4FE9490062C9DC /* AppDelegate.swift */,
 				3F68DDB61C4FE9490062C9DC /* ViewController.swift */,
+				3F68DDE21C513C340062C9DC /* CollegesClass.swift */,
+				3F68DDE41C5142780062C9DC /* detailViewController.swift */,
 				3F68DDB81C4FE9490062C9DC /* Main.storyboard */,
 				3F68DDBB1C4FE9490062C9DC /* Assets.xcassets */,
 				3F68DDBD1C4FE9490062C9DC /* LaunchScreen.storyboard */,
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F68DDB71C4FE9490062C9DC /* ViewController.swift in Sources */,
+				3F68DDE31C513C340062C9DC /* CollegesClass.swift in Sources */,
 				3F68DDB51C4FE9490062C9DC /* AppDelegate.swift in Sources */,
+				3F68DDE51C5142780062C9DC /* detailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
