@@ -52,13 +52,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myAlert.addTextFieldWithConfigurationHandler { (locationTextField) -> Void in
             locationTextField.placeholder = "Add College Location Here"
         }
+        myAlert.addTextFieldWithConfigurationHandler { (numberOfStudentsTextField) -> Void in
+            numberOfStudentsTextField.placeholder = "Add Number of Students Here"
+        }
+
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         myAlert.addAction(cancelAction)
         
         let addAction = UIAlertAction(title: "Add", style: .Default) { (addAction) -> Void in
             let nameTF = myAlert.textFields![0] as UITextField
             let locationTextField = myAlert.textFields![1] as UITextField
-            self.colleges.append(CollegesClass(Name: nameTF.text!, Location: locationTextField.text!))
+            let numberTextField = myAlert.textFields![2] as UITextField
+            self.colleges.append(CollegesClass(Name: nameTF.text!, Location: locationTextField.text!, NumberOfStudents: Int(numberTextField.text!)!))
             self.myTableView.reloadData()
             
         }
