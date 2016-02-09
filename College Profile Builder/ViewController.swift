@@ -23,9 +23,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myTableView.delegate = self
         editButton.tag = 0
         
-        colleges.append(CollegesClass(Name: "University of Florida", Location: "Gainesville, Florida", NumberOfStudents: 51725, Image: UIImage(named: "uf")!))
-        colleges.append(CollegesClass(Name: "Florida State University", Location: "Tallahassee, Florida", NumberOfStudents: 41473, Image: UIImage(named: "fsu")!))
-        colleges.append(CollegesClass(Name: "Stanford University", Location: "Stanford, California", NumberOfStudents: 16136, Image: UIImage(named: "stanford")!))
+        colleges.append(CollegesClass(Name: "University of Florida", Location: "Gainesville, Florida", NumberOfStudents: 51725, Image: UIImage(named: "uf")!, Webpage: "http://www.ufl.edu/"))
+        colleges.append(CollegesClass(Name: "Florida State University", Location: "Tallahassee, Florida", NumberOfStudents: 41473, Image: UIImage(named: "fsu")!, Webpage: "http://www.fsu.edu/"))
+        colleges.append(CollegesClass(Name: "Stanford University", Location: "Stanford, California", NumberOfStudents: 16136, Image: UIImage(named: "stanford")!, Webpage: "https://www.stanford.edu/"))
     }
     
     @IBAction func editButtonTapped(sender: UIBarButtonItem)
@@ -55,6 +55,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         myAlert.addTextFieldWithConfigurationHandler { (numberOfStudentsTextField) -> Void in
             numberOfStudentsTextField.placeholder = "Add Number of Students Here"
         }
+        myAlert.addTextFieldWithConfigurationHandler { (webpageTextField) -> Void in
+            webpageTextField.placeholder = "Add Website Here"
+        }
 
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         myAlert.addAction(cancelAction)
@@ -63,7 +66,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let nameTF = myAlert.textFields![0] as UITextField
             let locationTextField = myAlert.textFields![1] as UITextField
             let numberTextField = myAlert.textFields![2] as UITextField
-            self.colleges.append(CollegesClass(Name: nameTF.text!, Location: locationTextField.text!, NumberOfStudents: Int(numberTextField.text!)!))
+            let webpageTextField = myAlert.textFields![3] as UITextField
+            self.colleges.append(CollegesClass(Name: nameTF.text!, Location: locationTextField.text!, NumberOfStudents: Int(numberTextField.text!)!, Webpage: webpageTextField.text!))
+                
+                
             self.myTableView.reloadData()
             
         }
