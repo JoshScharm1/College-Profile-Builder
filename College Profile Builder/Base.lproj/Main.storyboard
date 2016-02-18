@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -84,6 +85,39 @@
             </objects>
             <point key="canvasLocation" x="1030" y="-358"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="YFV-VC-8eN">
+            <objects>
+                <viewController id="6cM-qF-ITV" customClass="mapViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sRQ-Yr-knd"/>
+                        <viewControllerLayoutGuide type="bottom" id="gjO-H5-VUu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yPa-IT-Zf1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="r0Y-wV-igC">
+                                <rect key="frame" x="44" y="177" width="240" height="128"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="r0Y-wV-igC" firstAttribute="top" secondItem="sRQ-Yr-knd" secondAttribute="bottom" constant="60" id="Naz-gu-NA7"/>
+                            <constraint firstItem="r0Y-wV-igC" firstAttribute="leading" secondItem="yPa-IT-Zf1" secondAttribute="leadingMargin" constant="-20" id="Zle-up-EkQ"/>
+                            <constraint firstItem="gjO-H5-VUu" firstAttribute="top" secondItem="r0Y-wV-igC" secondAttribute="bottom" id="fdM-Mg-yqE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r0Y-wV-igC" secondAttribute="trailing" constant="-20" id="wau-U5-syC"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="myMapView" destination="r0Y-wV-igC" id="jyj-uR-B91"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfn-VJ-AnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2205.5" y="-358.5"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="VV5-Us-Irr">
             <objects>
@@ -144,6 +178,13 @@
                                     <action selector="photosButtonTapped:" destination="69Q-VR-jt9" eventType="touchUpInside" id="xxW-Ck-8cx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zC4-lG-rHJ">
+                                <rect key="frame" x="172" y="617" width="32" height="30"/>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <segue destination="6cM-qF-ITV" kind="show" id="qjd-v8-xJh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -165,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gi-uG-Snc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750" y="-358"/>
+            <point key="canvasLocation" x="1749.5" y="-358.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BQ6-k2-4mq">

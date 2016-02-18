@@ -17,6 +17,8 @@ class detailViewController: UIViewController, SFSafariViewControllerDelegate, UI
     @IBOutlet weak var numberOfStudentsTextField: UITextField!
     @IBOutlet weak var webpageTextField: UITextField!
     
+    var collegeMap : [CollegesClass] = []
+    
     var college : CollegesClass!
     let imagePicker = UIImagePickerController()
     
@@ -55,7 +57,7 @@ class detailViewController: UIViewController, SFSafariViewControllerDelegate, UI
     {
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             presentViewController(imagePicker, animated: true, completion: nil)
-            
+        
         }
         
         func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
@@ -65,6 +67,12 @@ class detailViewController: UIViewController, SFSafariViewControllerDelegate, UI
                 self.myImageView.image = selectedImage
             }
             
+    }
+   
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let mapView = segue.destinationViewController as! mapViewController
+        mapView.name = college.name
     }
 
 }
